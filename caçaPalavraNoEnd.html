@@ -1,0 +1,123 @@
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
+  <title>string p4</title>
+</head>
+<style>
+body{ 
+background-color: cadetblue;
+
+
+}
+#bot{
+    background-color: #20b2aa;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+input{
+    border: #000 solid 1px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+#bot2{
+    background-color: lightseagreen;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-style: italic;}
+
+    #txt{
+ color: rgb(255, 0, 0);
+ 
+
+
+    }
+
+
+
+
+
+    
+</style>
+
+<body>
+  
+
+    <p id="txt"></p>
+    <button id="bot">new word</button> <br>
+  
+
+ 
+<script>
+//------------------------------------------------------------------------------
+   var texto=document.getElementById("txt").innerHTML
+  var stringx =[]
+  var bt;
+ 
+
+stringx.push("abelha")
+push("acidente")
+stringx.push("bagunceiro")
+stringx.push("boldo")
+stringx.push("churrasco")
+stringx.push("consolidado")
+stringx.push("difusor")
+stringx.push("desordem")
+stringx.push("empresa")
+stringx.push("especial")
+stringx.push("fumar")
+stringx.push("frouxo")
+stringx.push("gorro")
+/stringx.push("giz")
+stringx.push("humilde")
+stringx.push("humilde")
+stringx.push("harpa")
+stringx.push("imagens")
+stringx.push("impedimento")
+ console.log(stringx.length)
+
+//------------------------------------------------------------------------------
+
+
+
+const aleatory =(min,max) => 
+  Math.floor(Math.random()*(max - min + 1 )) + min
+
+const palavrasx = () =>
+  stringx[aleatory(0, stringx.length - 1)]
+
+const io =() => console.log(palavrasx())
+
+bt=document.getElementById("bot").addEventListener("click",io)
+
+document.write(texto)
+
+
+
+
+
+//--------------------------------------------------------
+
+    
+  
+
+ window.addEventListener("load")
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
