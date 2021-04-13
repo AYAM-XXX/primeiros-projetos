@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+    <style>
+ #div1{width: 200px ; 
+     height: 200px;
+    border: 1px solid black;
+    background-color: brown; 
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+
+    </style>
+   
+</head>
+<script>
+
+window.addEventListener("load",event)
+
+ function msg(){
+ alert("sou hetero")
+
+ } 
+ function cor1(){
+
+    var obj=document.getElementById("div1")
+    obj.style.backgroundColor="#fff"
+ }
+ function cor2(){
+     var obj=document.getElementById("div1")
+     obj.style.backgroundColor="#f00"
+    }
+
+function event() {
+  var obj= document.getElementById("div1")
+  obj.addEventListener("click",msg)
+  obj.addEventListener("mouseover",cor1)
+  obj.addEventListener("mouseout",cor2)
+}
+
+
+
+</script>
+<body>
+    <div id="div1"></div>
+
+    </div>
+    
+</body>
+</html>

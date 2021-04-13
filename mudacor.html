@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+    <title>addEventListener</title>
+
+
+    <style>
+ #div1{width: 100px ; 
+     height: 100px;
+    border: 1px solid #000;
+    background-color: "#fff"
+}
+ 
+    </style>
+
+    
+
+   
+</head>
+<script>
+// variaveis usadas 
+
+var tmp;
+
+ function mudacor(){
+  var obj=document.getElementById("div1")
+
+
+  var r=Math.floor(Math.random() * 255);
+  
+  var g=Math.floor(Math.random() * 255);
+ 
+  var b=Math.floor(Math.random() * 255);
+
+ 
+  obj.style.backgroundColor="rgb("+r+","+g+","+b+")";
+
+ }
+
+function iniciar(){
+
+tmp=setInterval(mudacor,1000)
+
+}
+function parar(){
+
+clearInterval(tmp)
+
+}
+function addeventos(){
+
+document.getElementById("bt1").addEventListener("click",iniciar);      
+document.getElementById("bt2").addEventListener("click",parar);  
+
+}
+      
+
+    window.addEventListener("load",addeventos)
+
+</script>
+<body>
+    <div id="div1"></div>
+
+    <button id="bt1">iniciar</button>
+</br>
+     <button id="bt2">parar</button>
+    </body>
+    
+</body>
+</html>

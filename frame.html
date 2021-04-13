@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>frame</title>
+</head>
+<style>
+    #jogador{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #00f;
+  width: 50px;
+  height: 50px;
+   }
+
+   #hj{
+
+  position: relative;
+
+   }
+   #hjj{
+
+position: relative;
+
+ }
+
+
+</style>
+<script>
+    var vel;
+    var dx;
+    var dy;
+    var px;
+    var py;
+    var anima;
+    var jog;
+    var bt1;
+    var bt2;
+    var btt3;
+
+    var r=Math.floor(Math.random() * 255)
+    var g=Math.floor(Math.random() * 255)
+    var b=Math.floor(Math.random() * 255)
+
+    
+
+
+
+    var o=Math.floor(Math.random() * 255)
+    var o=Math.floor(Math.random() * 255)
+    var o=Math.floor(Math.random() * 255)
+
+    
+    function iniciar () {
+       px=0
+       dx=1
+       vel=5
+       dy=0
+       py=0
+
+     
+         jog=document.getElementById("jogador")
+         game()
+         jog.addEventListener("click",parar)
+         jog.removeEventListener("dblclick",parar)
+         bt1=document.getElementById("hj")
+         bt1.addEventListener("click",parar)
+         bt2=document.getElementById("hjj")
+         bt2.addEventListener("click",vell)
+         bt3=document.getElementById("hjjj")
+         bt3.addEventListener("click",velll)
+
+         
+         
+        
+         
+         
+       
+    }
+
+       function parar() {
+        vel=0
+        
+           
+       }
+
+    function game () {
+
+        px+=(dx*vel)
+
+        if(px>1350){
+         dx=-1
+         
+         jog.style.backgroundColor="rgb("+r+","+g+","+b+")"
+         
+
+        }else if(px<0){
+         dx=1
+        jog.style.backgroundColor="rgb("+o+","+o+","+o+")"
+        
+        }else{
+              
+            jog.addEventListener("dblclick",vell)
+
+        }
+        
+        
+
+        jog.style.left=px+"px"
+        anima=requestAnimationFrame(game)
+    }
+    function vell() {
+        vel=5
+        
+    }
+    function velll() {
+        vel=55
+        
+    }
+   
+    
+    
+    
+
+   
+ window.addEventListener("load",iniciar)
+
+</script>
+<body>
+    <div id="jogador"></div>
+   <button id="hj">parar</button>
+   <button id="hjj">começar</button>
+   <button id="hjjj">boost</button>
+</body>
+</html>

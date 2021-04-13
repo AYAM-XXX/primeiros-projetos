@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+    <title>addEventListener</title>
+
+
+    <style>
+ #div1{width: 100px ; 
+     height: 100px;
+    border: 1px solid #000;
+    background-color: rgb(255, 255, 255); 
+    position: absolute;
+    left: 0px;
+    top: 0px;
+ }
+    </style>
+
+   
+</head>
+<script>
+
+   var px=0;
+   var py=0;
+//  37=esquerda , 38=cima , 39=direita , 40=baixo
+//  x para esquerda e negativo e x para  direita e positivo
+//  y para cima e positivo e y para baixo e negativo
+ 
+
+
+function move() {  
+var obj=document.getElementById ("div1")
+   var tecla=event.keyCode
+
+   if (tecla==37) {
+           px-=10;
+           obj.style.left=px+"px"
+      
+   }else if (tecla==38){  
+           py-=10;
+           obj.style.top=py+"px"
+
+   }else if (tecla==39){
+           px+=10;
+           obj.style.left=px+"px" 
+
+   }else if (tecla==40){
+           py+=10;
+           obj.style.top=py+"px"
+ }else if (tecla==13){
+ alert("evento removido")
+
+ this.removeEventListener("keydown",move)
+
+ }
+
+}
+
+function addclique() {
+   document.addEventListener("keydown",move)
+    this.style.backgroundColor="#f00"
+}
+ function colorclique(){
+var obj=document.getElementById("div1")
+ obj.addEventListener("click",addclique)
+
+
+
+
+ }
+
+window.addEventListener("load",colorclique)
+
+
+  
+
+
+
+
+ 
+
+
+
+         
+
+
+         
+          
+         
+
+
+
+
+
+    
+         
+         
+
+
+</script>
+<body>
+    <div id="div1"></div>
+
+    </div>
+    
+</body>
+</html>
