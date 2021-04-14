@@ -8,6 +8,17 @@
 </head>
 <style>
 
+#divjogo{
+
+width: 160px;
+height: 160px;
+display: flex;
+flex-wrap: wrap;
+align-content: flex-start;
+
+
+}
+
 .PosGame{
 
 width: 50px;
@@ -16,17 +27,6 @@ margin: 0px;
 padding:0px;
 cursor: pointer;
 display: flex;
-
-
-}
-#divjv{
-
-width: 160px;
-height: 160px;
-display: flex;
-flex-wrap: wrap;
-align-content: flex-start;
-
 
 }
 
@@ -225,11 +225,11 @@ window.addEventListener("load",iniciar);
 </head>
 <body>
 
-<div id="menuJV"></div>
-<div id="player"></div>
-<button id="but">START</button>
+<div id="dvmenu"></div>
+<div id="quemcomeca"></div>
+<button id="but" onclick="">START</button>
 
-<div id="divjv">
+<div id="divjogo">
   <div id="p1" class="PosGame" onclick="jogar(1)"></div>
   <div id="p2" class="PosGame" onclick="jogar(2)"></div>
   <div id="p3" class="PosGame" onclick="jogar(3)"></div>
