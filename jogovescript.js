@@ -1,5 +1,5 @@
 const celulas= document.querySelectorAll(".celula");
-let checarTurno= true;
+let fimDeJogo = false;
 const jogador_X= "X";
 const jogador_O= "O";
 const COBINACOES=[
@@ -20,13 +20,39 @@ document.addEventListener("click", (event) =>{
 
     if(event.target.matches(".celula")){
       console.log(event.target.id);
-      jogar(event.target.id);
+      jogar(event.target.id, jogador_X);
+     setTimeout(() => bot(),500);
 
 }});
 
-function jogar(id){
+function bot() {
+
+  const posicoesDisponiveis = [];
+
+  for( index in celulas){
+      if (!isNaN(index)) {
+          if (
+
+            !celulas[index].classList.contains("X")&&
+            !celulas[index].classList.contains("O")
+
+            ) {
+             posicoesDisponiveis.push(index);
+          }       
+      }            
+  }
+  const posicaoAleatoria = Math.floor(
+    Math.random() * posicoesDisponiveis.length
+    );
+    if (!fimDeJogo) {
+       jogar(posicoesDisponiveis[posicaoAleatoria], jogador_O);
+    };
+ 
+           
+};
+
+function jogar(id, turno){
    const celula = document.getElementById(id)
-   turno = checarTurno ? jogador_X : jogador_O;
    celula.textContent= turno;
    celula.classList.add(turno)
    
@@ -47,10 +73,7 @@ if (vencedor) {
   encerraJogo(turno);
 }else if (checarEmpate()){
   encerraJogo();
-} else {
-  checarTurno = !checarTurno;
-};
-
+}
 };
 
 function checarEmpate(){
@@ -74,6 +97,7 @@ function checarEmpate(){
 
 
 function encerraJogo(vencedor = null){
+  fimDeJogo = true;
   const telaEscura = document.getElementById("tela-escura");
   const h2 = document.createElement("h2");
   const h3 = document.createElement("h3");
